@@ -4,8 +4,8 @@
     "reflect-metadata": "^0.1.13",
     "uuid": "^8.3.2"
   },
-  "name": "untitled2",
-  "version": "1.0.0",
+  "name": "injectable-js",
+  "version": "0.0.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
@@ -13,8 +13,8 @@
     "test:watch": "jest --watchAll"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "LonguCodes",
+  "license": "GNU AGPL v3",
   "description": "",
   "devDependencies": {
     "@types/jest": "^26.0.20",
