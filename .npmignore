@@ -1,6 +1,7 @@
-src/__tests__
+src
 node_modules
 .idea
 jest.config.js
 .gitignore
 .git
+dist/__t
