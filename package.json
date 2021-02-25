@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "composable-js": "file:../composable-js",
+    "composable-js": "^0.0.3",
     "reflect-metadata": "^0.1.13",
     "uuid": "^8.3.2"
   },
@@ -26,4 +26,3 @@
     "typescript": "^4.1.5"
   }
 }
-
