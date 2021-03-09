@@ -1,6 +1,7 @@
 import {Constructor, Getter, ParameterInjectionType, ParameterMetadata} from "./types";
 import {Binding, SingletonBinding, TransientBinding, ValueBinding} from "./binding";
 import 'reflect-metadata'
+import {ComposableClass} from "composable-js";
 
 
 export enum BindingLifetime {
@@ -61,7 +62,8 @@ export class DIContainer {
     }
 
     static instantiate<T>(cls: Constructor<T>, sourceParameters: any[] = []): T {
-        const metadata: ParameterMetadata[] | undefined = Reflect.getMetadata(DIContainer.metadataKey, cls);
+        const composable = ComposableClass.get(cls);
+        const metadata: ParameterMetadata[] | undefined = Reflect.getMetadata(DIContainer.metadataKey, composable);
         if (metadata)
             sourceParameters = this.resolveParameters(metadata, sourceParameters)
         return new cls(...sourceParameters)

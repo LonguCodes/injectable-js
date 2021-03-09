@@ -34,20 +34,6 @@ describe('Inject decorators', () => {
 
             }
         }
-        it('Should mark parameter of index 0 with metadata', () => {
-            expect(Reflect.hasMetadata(DIContainer.metadataKey, TestClass)).not.toBeFalsy()
-        })
-
-        it('Should mark parameter of index 0 with correct metadata', () => {
-            const metadata = Reflect.getMetadata(DIContainer.metadataKey, TestClass)
-            expect(metadata).toBeInstanceOf(Array)
-            expect(metadata).toContainEqual({
-                key: 'testKey',
-                type: ParameterInjectionType.Value,
-                containerProvider: ExampleProvider,
-                position:0
-            })
-        })
 
         it('Should inject proper value into the constructor',()=>{
             const instance = DIContainer.instantiate(TestClass);
@@ -62,20 +48,7 @@ describe('Inject decorators', () => {
 
             }
         }
-        it('Should mark parameter of index 0 with metadata', () => {
-            expect(Reflect.hasMetadata(DIContainer.metadataKey, TestClass)).not.toBeFalsy()
-        })
 
-        it('Should mark parameter of index 0 with correct metadata', () => {
-            const metadata = Reflect.getMetadata(DIContainer.metadataKey, TestClass)
-            expect(metadata).toBeInstanceOf(Array)
-            expect(metadata).toContainEqual({
-                key: 'testKey',
-                type: ParameterInjectionType.Getter,
-                containerProvider: ExampleProvider,
-                position:0
-            })
-        })
 
         it('Should inject proper value into the constructor',()=>{
             const instance = DIContainer.instantiate(TestClass);
@@ -91,20 +64,8 @@ describe('Inject decorators', () => {
 
             }
         }
-        it('Should mark parameter of index 0 with metadata', () => {
-            expect(Reflect.hasMetadata(DIContainer.metadataKey, TestClass)).not.toBeFalsy()
-        })
 
-        it('Should mark parameter of index 0 with correct metadata', () => {
-            const metadata = Reflect.getMetadata(DIContainer.metadataKey, TestClass)
-            expect(metadata).toBeInstanceOf(Array)
-            expect(metadata).toContainEqual({
-                key: 'testKey',
-                type: ParameterInjectionType.Value,
-                containerProvider: ExampleProvider,
-                position:0
-            })
-        })
+
 
         it('Should inject proper value into the constructor',()=>{
             const instance = DIContainer.instantiate(TestClass);
@@ -121,20 +82,6 @@ describe('Inject decorators', () => {
 
             }
         }
-        it('Should mark parameter of index 0 with metadata', () => {
-            expect(Reflect.hasMetadata(DIContainer.metadataKey, TestClass)).not.toBeFalsy()
-        })
-
-        it('Should mark parameter of index 0 with correct metadata', () => {
-            const metadata = Reflect.getMetadata(DIContainer.metadataKey, TestClass)
-            expect(metadata).toBeInstanceOf(Array)
-            expect(metadata).toContainEqual({
-                key: 'testKey',
-                type: ParameterInjectionType.Getter,
-                containerProvider: ExampleProvider,
-                position:0
-            })
-        })
 
         it('Should inject proper value into the constructor',()=>{
             const instance = DIContainer.instantiate(TestClass);

@@ -2,11 +2,14 @@ import 'reflect-metadata'
 import {DIContainer} from "./container";
 import {ParameterInjectionType, ParameterMetadata, Provider} from "./types";
 import {BindingKey} from "./bindingKey";
+import {ComposableClass} from "composable-js";
 
 function createInjectDecorator(key: string | Symbol, type: ParameterInjectionType, containerProvider: Provider<DIContainer>) {
     return function (object: any, propertyKey: string, parameterIndex: number) {
-
-        const metadata: ParameterMetadata[] = Reflect.getMetadata(DIContainer.metadataKey, object, propertyKey) ?? []
+        if (typeof object !== "function" || propertyKey !== undefined)
+            throw new Error('@inject can only be used on constructor')
+        const composable = ComposableClass.get(object);
+        const metadata: ParameterMetadata[] = Reflect.getMetadata(DIContainer.metadataKey, composable) ?? []
         metadata.push(
             {
                 key,
@@ -15,7 +18,7 @@ function createInjectDecorator(key: string | Symbol, type: ParameterInjectionTyp
                 position: parameterIndex
             }
         )
-        Reflect.defineMetadata(DIContainer.metadataKey, metadata, object, propertyKey)
+        Reflect.defineMetadata(DIContainer.metadataKey, metadata, composable)
     }
 }
 
