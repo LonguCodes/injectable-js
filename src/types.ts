@@ -1,7 +1,7 @@
 import {DIContainer} from "./container";
 
 export type Provider<T> = { get: T | undefined }
-export type Constructor<T extends object = any> = new (...args: any[]) => T;
+export type Constructor<T = any> = new (...args: any[]) => T;
 export type Getter<T> = () => T
 
 export enum ParameterInjectionType {
