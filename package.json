@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "composable-js": "^0.1.0",
+    "composable-js": "^0.1.1",
     "reflect-metadata": "^0.1.13",
     "uuid": "^8.3.2"
   },
