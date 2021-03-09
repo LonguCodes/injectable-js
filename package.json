@@ -5,7 +5,7 @@
     "uuid": "^8.3.2"
   },
   "name": "injectable-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -24,5 +24,8 @@
     "ts-jest": "^26.5.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.5"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
