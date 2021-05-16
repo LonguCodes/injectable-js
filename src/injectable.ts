@@ -7,8 +7,8 @@ export function injectable(
     containerProvider: Provider<DIContainer>,
     lifetime: BindingLifetime = BindingLifetime.Transient
 ) {
-    return (cls: Constructor) => ComposableClass.get(cls).chain((original: Constructor, composable) => {
+    return ComposableClass.decorator((original: Constructor, composable) => {
         containerProvider.get?.registerBinding(key, composable, lifetime);
         return original
-    }).composed
+    })
 }
