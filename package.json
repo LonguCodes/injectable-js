@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "composable-js": "0.1.9",
+    "composable-js": "0.1.10",
     "reflect-metadata": "^0.1.13",
     "uuid": "^8.3.2"
   },
   "name": "injectable-js",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

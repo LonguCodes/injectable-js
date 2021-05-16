@@ -1,5 +1,5 @@
 dependencies:
-  composable-js: 0.1.9
+  composable-js: 0.1.10
   reflect-metadata: 0.1.13
   uuid: 8.3.2
 devDependencies:
@@ -1108,13 +1108,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==
-  /composable-js/0.1.9:
+  /composable-js/0.1.10:
     dependencies:
       reflect-metadata: 0.1.13
       uuid: 8.3.2
     dev: false
     resolution:
-      integrity: sha512-bWEcTK5FSLC8ai52EPAW4NihAbUVffOp5aRg+pG/wwscyOZk3vhQj9rVKSryP+Ryal3eXop7SvwCRBx1welSQQ==
+      integrity: sha512-1AAKFvNNEdcKDsB9QMnnVfLPfhhglaWiV5RBEBnjT9386pHzdtdE9SBFIXCe3MgiVZbcR2NJSmjOxYJtLZtayw==
   /concat-map/0.0.1:
     dev: true
     resolution:
@@ -4014,7 +4014,7 @@ specifiers:
   '@types/jest': ^26.0.23
   '@types/node': ^15.3.0
   '@types/uuid': ^8.3.0
-  composable-js: 0.1.9
+  composable-js: 0.1.10
   jest: ^26.6.3
   reflect-metadata: ^0.1.13
   ts-jest: ^26.5.6
