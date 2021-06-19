@@ -1,14 +1,19 @@
-import {Constructor, Provider} from "./types";
-import {ComposableClass} from "../../composable-js";
-import {BindingLifetime, DIContainer} from "./container";
+import { Provider } from './types';
+import { BindingLifetime, DIContainer } from './container';
+import { Constructor, ComposableClass } from 'composable-js';
+import { BindingKey } from './bindingKey';
 
 export function injectable(
-    key:string|Symbol,
-    containerProvider: Provider<DIContainer>,
-    lifetime: BindingLifetime = BindingLifetime.Transient
+	lifetime: BindingLifetime = BindingLifetime.Transient,
+	key?: BindingKey,
+	containerProvider?: Provider<DIContainer>
 ) {
-    return ComposableClass.decorator((original: Constructor, composable) => {
-        containerProvider.get?.registerBinding(key, composable, lifetime);
-        return original
-    })
+	return ComposableClass.decorator((original: Constructor, composable) => {
+		DIContainer.getProvider(containerProvider).get?.registerBinding(
+			key ?? (() => original),
+			composable,
+			lifetime
+		);
+		return original;
+	});
 }

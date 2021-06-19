@@ -1,16 +1,12 @@
-import {Provider} from "./types";
-import {BindingLifetime, DIContainer} from "./container";
+import { ComposableClass, Constructor } from 'composable-js';
 
-export class BindingKey<T> {
-    constructor(public readonly key: Symbol | string, private _lifetime: BindingLifetime, public readonly containerProvider: Provider<DIContainer>) {
-    }
+export type BindingKey<T = any> = string | symbol | (() => Constructor<T>);
 
-    get value() {
-        return this.containerProvider.get?.getBinding(this.key)
-    }
-
-    set value(value: any) {
-        this.containerProvider.get?.registerBinding(this.key, value, this._lifetime)
-    }
-
+export namespace BindingKey {
+	export function getRawKey(key: BindingKey): string | symbol {
+		if (typeof key === 'function') {
+			return ComposableClass.get(key()).id;
+		}
+		return key;
+	}
 }

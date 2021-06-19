@@ -1,17 +1,17 @@
-import {DIContainer} from "./container";
+import { DIContainer } from './container';
+import { BindingKey } from './bindingKey';
 
-export type Provider<T> = { get: T | undefined }
-export type Constructor<T = any> = new (...args: any[]) => T;
-export type Getter<T> = () => T
+export type Provider<T> = { get: T | undefined };
+export type Getter<T> = () => T;
 
 export enum ParameterInjectionType {
-    Value,
-    Getter
+	Value,
+	Getter
 }
 
 export interface ParameterMetadata {
-    position: number;
-    key: string | Symbol;
-    containerProvider: Provider<DIContainer>
-    type: ParameterInjectionType
+	position: number;
+	key: BindingKey;
+	containerProvider: Provider<DIContainer>;
+	type: ParameterInjectionType;
 }
